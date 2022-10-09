@@ -7,11 +7,32 @@ body {
     flex-direction: row;
 }
 
+
+/* instructions */
+
 .instructionDiv {
     background-color: #ded9c4;
     clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%);
+    /* color: #f6f6f6; */
     height:100vh;
     width: 55%;
+}
+
+.heading {
+    font-size: 5rem;
+    padding: 4rem 1rem 2rem 4rem;
+}
+
+.instruction {
+    display: flex;
+    padding: 2rem 2rem 2rem 4rem;
+    align-items: center;
+
+}
+
+.instruction-icon {
+    font-size: 4rem;
+    width: 5rem;
 }
 
 .formDiv {
