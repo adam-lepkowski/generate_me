@@ -1,0 +1,21 @@
+body {
+    background-color: #89b5af;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.instructionDiv {
+    background-color: #ded9c4;
+    clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%);
+    height:100vh;
+    width: 55%;
+}
+
+.formDiv {
+    background-color: #89b5af;
+    height:100vh;
+    width: 45%;
+}
