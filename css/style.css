@@ -10,7 +10,7 @@ body {
 
 /* instructions */
 
-.instructionDiv {
+.instruction-div {
     background-color: #ded9c4;
     clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%);
     /* color: #f6f6f6; */
@@ -35,7 +35,7 @@ body {
     width: 5rem;
 }
 
-.formDiv {
+.form-div {
     height:100vh;
     width: 45%;
 }
