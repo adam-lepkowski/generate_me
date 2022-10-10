@@ -35,7 +35,27 @@ body {
     width: 5rem;
 }
 
+/* form */
+
 .form-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height:100vh;
     width: 45%;
+}
+
+.gender-icons {
+    font-size: 5rem;
+    padding: 5rem 0 0 5rem;
+}
+
+.form-row {
+    text-align: right;
+    padding: 1rem;
+}
+
+.generate-row {
+    text-align: center;
+    padding-left: 5rem;
 }
