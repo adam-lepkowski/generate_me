@@ -73,3 +73,18 @@ body {
     text-align: center;
     padding-left: 5rem;
 }
+
+.generate-button {
+    background-color: #ded9c4;
+    margin-left: 2.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.generate-button:hover {
+    background-color: #D0CAB2;
+}
+
+.generate-button:active {
+    background-color: #D0CAB2 !important;
+    border-width: 0 !important;
+}
