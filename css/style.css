@@ -51,9 +51,14 @@ body {
 }
 
 .form-row {
-    text-align: right;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     padding: 1rem;
 }
+
+
 
 .generate-row {
     text-align: center;
