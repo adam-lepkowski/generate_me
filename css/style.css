@@ -59,6 +59,11 @@ body {
     padding: 1rem;
 }
 
+.label {
+    font-size: 1.5rem;
+    padding: 0.6rem 0.5rem 0 0;
+}
+
 .generate-row {
     text-align: center;
     padding-left: 5rem;
