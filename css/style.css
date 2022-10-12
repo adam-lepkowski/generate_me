@@ -14,19 +14,18 @@ body {
 .instruction-div {
     background-color: #ded9c4;
     clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%);
-    /* color: #f6f6f6; */
     height:100vh;
     width: 55%;
+    padding: 4rem 0 0 13rem;
 }
 
 .heading {
     font-size: 5rem;
-    padding: 4rem 1rem 2rem 4rem;
 }
 
 .instruction {
     display: flex;
-    padding: 2rem 2rem 2rem 4rem;
+    padding-top: 2rem;
     align-items: center;
 
 }
@@ -44,11 +43,12 @@ body {
     flex-direction: column;
     height:100vh;
     width: 45%;
+    padding: 4rem 9rem 0 0;
 }
 
 .gender-icons {
     font-size: 5rem;
-    padding: 5rem 0 0 5rem;
+    padding-left: 6rem;
 }
 
 .form-row {
