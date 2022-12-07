@@ -59,14 +59,22 @@ body {
     padding: 1rem;
 }
 
-.label {
+.form-row label {
     font-size: 1.5rem;
-    padding: 0.6rem 0.5rem 0 0;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.form-row input {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    display: block;
+    padding: 0.4rem;
+    width: 15rem;
 }
 
 .clipboard-icon {
     font-size: 1.5rem;
-    padding: 0.4rem 0 0 0.5rem;
+    padding: 0.4rem 0 0.5rem 0.5rem;
 }
 
 .generate-row {
