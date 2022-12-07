@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- app styles -->
-  <link rel="stylesheet" href="{% static "app/app.css" %}">
+  <link rel="stylesheet" href="{% static 'app/app.css' %}">
 </head>
 
 <body>
@@ -47,50 +47,15 @@
         <i class="fa-solid fa-venus"></i>
       </div>
       <form action="">
+        {% csrf_token %}
+        {% for field in form %}
         <div class="form-row">
-          <div class="label">
-            <label class="form-label" for="name">Name</label>
-          </div>
-          <div>
-            <input class="form-control" type="text" id="name">
-          </div>
-          <div>
-            <i class="fa-solid fa-clipboard clipboard-icon"></i>
-          </div>
+          {{ field.label_tag }}
+          {{ field }}
+          {{ field.errors }}
+          <i class="fa-solid fa-clipboard clipboard-icon"></i>
         </div>
-        <div class="form-row">
-          <div class="label">
-            <label class="form-label" for="last-name">Last name</label>
-          </div>
-          <div>
-            <input class="form-control" type="text" id="last-name">
-          </div>
-          <div>
-            <i class="fa-solid fa-clipboard clipboard-icon"></i>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="label">
-            <label class="form-label" for="dob">Date of birth</label>
-          </div>
-          <div>
-            <input class="form-control" type="text" id="dob">
-          </div>
-          <div>
-            <i class="fa-solid fa-clipboard clipboard-icon"></i>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="label">
-            <label class="form-label" for="nickname">Nickname</label>
-          </div>
-          <div>
-            <input class="form-control" type="text" id="nickname">
-          </div>
-          <div>
-            <i class="fa-solid fa-clipboard clipboard-icon"></i>
-          </div>
-        </div>
+        {% endfor %}
         <div class="generate-row">
           <input class="btn generate-button" type="submit" value="Generate">
         </div>
