@@ -1,6 +1,37 @@
 import random
+import datetime
 
 from .models import FirstNameModel, LastNameModel
+
+def draw_dob():
+    """
+    Draw a random date of birth.
+
+    Returns
+    ----------
+    str
+        dob in format yyyy-mm-dd
+    """
+
+    year = random.randint(1970, 2010)
+    month = random.randint(1, 12)
+    days = {
+        1: 31,
+        2: 28,
+        3: 31,
+        4: 30,
+        5: 31,
+        6: 30,
+        7: 31,
+        8: 31,
+        9: 30,
+        10: 31,
+        11: 30,
+        12: 31
+    }
+    day = random.randint(1, days[month])
+    dob = datetime.date(year, month, day).strftime("%Y-%m-%d")
+    return dob 
 
 def draw_identity():
     """
