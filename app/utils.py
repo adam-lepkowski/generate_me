@@ -32,9 +32,10 @@ def draw_dob():
 
     year = random.randint(1970, 2010)
     month = random.randint(1, 12)
+    feb = 29 if is_leap(year) else 28
     days = {
         1: 31,
-        2: 28,
+        2: feb,
         3: 31,
         4: 30,
         5: 31,
