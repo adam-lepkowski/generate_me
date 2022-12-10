@@ -48,7 +48,7 @@ body {
 
 .gender-icons {
     font-size: 5rem;
-    padding-left: 6rem;
+    margin: 0 auto;
 }
 
 .form-row {
@@ -94,7 +94,7 @@ body {
 
 .generate-row {
     text-align: center;
-    padding-left: 5rem;
+    margin: auto;
 }
 
 .generate-button {
