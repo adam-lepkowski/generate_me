@@ -72,9 +72,24 @@ body {
     width: 15rem;
 }
 
+.tooltip-text {
+    margin-left: 0.5rem;
+    padding: 0 0.25rem 0 0.25rem;
+    width: 80px;
+    visibility: hidden;
+}
+
 .clipboard-icon {
     font-size: 1.5rem;
     padding: 0.4rem 0 0.5rem 0.5rem;
+}
+
+.clipboard-icon:hover {
+    color: #dfdac5;
+}
+
+.clipboard-icon:active {
+    color: #c1bcab;
 }
 
 .generate-row {
