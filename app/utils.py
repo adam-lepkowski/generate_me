@@ -51,6 +51,7 @@ def draw_dob():
     dob = datetime.date(year, month, day).strftime("%Y-%m-%d")
     return dob 
 
+
 def draw_identity():
     """
     Draw a random identity from FirstNameModel and LastNameModel.
@@ -73,6 +74,7 @@ def draw_identity():
         "first_name": fname.first_name,
         "last_name": lname.last_name,
         "gender": fname.gender,
+        "dob": draw_dob()
     }
 
     return result
