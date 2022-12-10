@@ -3,6 +3,23 @@ import datetime
 
 from .models import FirstNameModel, LastNameModel
 
+
+def is_leap(year):
+    """
+    Check if year is a leap year.
+
+    Returns
+    ----------
+    bool
+    """
+
+    if (year % 400 == 0) and (year % 100 == 0):
+        return True
+    elif (year % 4 ==0) and (year % 100 != 0):
+        return True
+    return False
+
+
 def draw_dob():
     """
     Draw a random date of birth.
