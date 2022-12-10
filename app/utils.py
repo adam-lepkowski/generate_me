@@ -4,6 +4,24 @@ import datetime
 from .models import FirstNameModel, LastNameModel
 
 
+def generate_nickname(fname, lname):
+    """
+    Create a nickname based on given first name and last name.
+
+    Returns
+    ----------
+    str
+        a nickname
+    """
+
+    fname = fname.lower()
+    lname = lname.lower().replace("-", "").replace(" ", "")
+    num = random.choice([str(random.randint(0, 10000)), ""])
+    nickname = random.choice(
+        [f"{fname}.{lname}{num}", f"{fname[0]}{lname}{num}"])
+    return nickname
+
+
 def is_leap(year):
     """
     Check if year is a leap year.
@@ -74,7 +92,8 @@ def draw_identity():
         "first_name": fname.first_name,
         "last_name": lname.last_name,
         "gender": fname.gender,
-        "dob": draw_dob()
+        "dob": draw_dob(),
+        "nickname": generate_nickname(fname.first_name, lname.last_name)
     }
 
     return result
