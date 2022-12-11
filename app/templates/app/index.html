@@ -43,8 +43,8 @@
 
     <div class="form-div">
       <div class="gender-icons">
-        <i class="fa-solid fa-mars"></i>
-        <i class="fa-solid fa-venus"></i>
+        <i class="fa-solid fa-mars {% if gender == 'male' %}icon-male{% endif %}"></i>
+        <i class="fa-solid fa-venus {% if gender == 'female' %}icon-female{% endif %}"></i>
       </div>
       <form action="/" method="POST">
         {% csrf_token %}
