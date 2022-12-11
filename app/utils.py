@@ -1,7 +1,45 @@
 import random
 import datetime
+import csv
+import pathlib
 
 from .models import FirstNameModel, LastNameModel
+
+
+def populate_db(path):
+    """
+    Populate project models FirstNameModel or LastNameModel from a csv file.
+
+    Parameters
+    ----------
+    path: str
+        path to csv file
+
+    Returns
+    ----------
+    str
+        if path does not exist, format is invalid or filename does not start
+        with first or last
+    None
+        when finished saving data to database
+    """
+
+    path = pathlib.Path(path)
+    if not path.exists():
+        return "Ivalid path"
+    elif not path.suffix == ".csv":
+        return f"Should be csv format. Format provided {path.suffix}"
+    elif not (path.stem.startswith("first") or path.stem.startswith("last")):
+        return f"Invalid filename. Should start with first or last. Starts with {path.stem}"
+
+    with open(path, "r") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if path.stem.startswith("first"):
+                name = FirstNameModel(first_name=row[0], gender=row[1])
+            elif path.stem.startswith("last"):
+                name = LastNameModel(last_name=row[0], gender=row[1])
+            name.save()
 
 
 def generate_nickname(fname, lname):
@@ -33,7 +71,7 @@ def is_leap(year):
 
     if (year % 400 == 0) and (year % 100 == 0):
         return True
-    elif (year % 4 ==0) and (year % 100 != 0):
+    elif (year % 4 == 0) and (year % 100 != 0):
         return True
     return False
 
@@ -67,7 +105,7 @@ def draw_dob():
     }
     day = random.randint(1, days[month])
     dob = datetime.date(year, month, day).strftime("%Y-%m-%d")
-    return dob 
+    return dob
 
 
 def draw_identity():
