@@ -129,9 +129,10 @@ def draw_identity():
     result = {
         "first_name": fname.first_name,
         "last_name": lname.last_name,
-        "gender": fname.gender,
+        "gender": fname.gender.lower(),
         "dob": draw_dob(),
         "nickname": generate_nickname(fname.first_name, lname.last_name)
     }
+    print(result)
 
     return result
