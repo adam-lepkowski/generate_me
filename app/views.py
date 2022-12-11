@@ -26,7 +26,8 @@ class IndexView(View):
 
         identity = draw_identity()
         context = {
-            "form": GeneratorForm(initial=identity, label_suffix="")
+            "form": GeneratorForm(initial=identity, label_suffix=""),
+            "gender": identity.get("gender")
         }
-
+        print(context)
         return render(request, "app/index.html", context)
