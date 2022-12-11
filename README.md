@@ -1,9 +1,11 @@
 # GenerateMe
-Generate a random identity with python/django and some js. 
+Generate a random identity with python/django and some js.
+
 The true reason behind this project is that I got tired of making up an identity when placing orders in my local KFC.
 
 ## Get started
 Start by getting some first and last names. You will need those with assigned genders. The structure of FirstNameModel and LastNameModel is first/last_name and gender. Once you have it, make migrations and store it in default django sqlite database.
+
 If you got the data needed in a csv file you can use a method from app.utils -  populate_db. You don’t need column headers. To populate FirstNameModel filename should start with “first”, “last” for  LastNameModel.
 
 #### Caution
