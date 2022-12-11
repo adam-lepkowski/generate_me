@@ -51,6 +51,14 @@ body {
     margin: 0 auto;
 }
 
+.icon-female {
+    color: #d4b7f7;
+}
+
+.icon-male {
+    color: #b2c9fd;
+}
+
 .form-row {
     align-items: center;
     display: flex;
