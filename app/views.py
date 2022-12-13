@@ -4,6 +4,7 @@ from django.views import View
 from .forms import GeneratorForm
 from .utils import draw_identity
 
+
 class IndexView(View):
     """
     Return main page.
@@ -18,7 +19,7 @@ class IndexView(View):
             "form": GeneratorForm(label_suffix="")
         }
         return render(request, "app/index.html", context)
-    
+
     def post(self, request):
         """
         Render main page with randomly selected data in form.
@@ -29,5 +30,4 @@ class IndexView(View):
             "form": GeneratorForm(initial=identity, label_suffix=""),
             "gender": identity.get("gender")
         }
-        print(context)
         return render(request, "app/index.html", context)
