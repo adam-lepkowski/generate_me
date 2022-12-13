@@ -133,6 +133,5 @@ def draw_identity():
         "dob": draw_dob(),
         "nickname": generate_nickname(fname.first_name, lname.last_name)
     }
-    print(result)
 
     return result
