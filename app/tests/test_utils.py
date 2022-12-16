@@ -1,7 +1,7 @@
 from django.test import TestCase
 from parameterized import parameterized
 
-from app.utils import generate_nickname
+from app.utils import generate_nickname, is_leap
 
 
 class TestGenerateNickname(TestCase):
@@ -18,3 +18,15 @@ class TestGenerateNickname(TestCase):
         self.assertTrue(result.startswith("f"))
         self.assertTrue("-" not in result)
         self.assertTrue(" " not in result)
+
+
+class TestIsLeap(TestCase):
+
+    @parameterized.expand([
+        ("dividable_400_100", 400, True, "assertTrue"),
+        ("dividable_4_not_100", 2020, True, "assertTrue"),
+        ("not_400_100_4", 2017, False, "assertFalse")
+
+    ])
+    def test_is_leap(self, name, year, expected, func):
+        getattr(self, func)(expected, is_leap(year))
