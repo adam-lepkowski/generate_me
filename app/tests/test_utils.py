@@ -1,7 +1,9 @@
+from unittest.mock import patch
+
 from django.test import TestCase
 from parameterized import parameterized
 
-from app.utils import generate_nickname, is_leap
+from app.utils import generate_nickname, is_leap, draw_dob
 
 
 class TestGenerateNickname(TestCase):
@@ -30,3 +32,13 @@ class TestIsLeap(TestCase):
     ])
     def test_is_leap(self, name, year, expected, func):
         getattr(self, func)(expected, is_leap(year))
+
+
+class TestDrawDob(TestCase):
+
+    @patch("app.utils.random.randint", side_effect=[2020, 2, 28])
+    def test_draw_dob(self, mock_randint):
+        result = draw_dob()
+        expected = "2020-02-28"
+        self.assertEqual(expected, result)
+        self.assertTrue(mock_randint.call_count == 3)
