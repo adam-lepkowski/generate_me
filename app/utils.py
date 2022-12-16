@@ -52,7 +52,7 @@ def generate_nickname(fname, lname):
         a nickname
     """
 
-    fname = fname.lower()
+    fname = fname.lower().replace("-", "").replace(" ", "")
     lname = lname.lower().replace("-", "").replace(" ", "")
     num = random.choice([str(random.randint(0, 10000)), ""])
     nickname = random.choice(
