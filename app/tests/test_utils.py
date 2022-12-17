@@ -3,7 +3,8 @@ from unittest.mock import patch
 from django.test import TestCase
 from parameterized import parameterized
 
-from app.utils import generate_nickname, is_leap, draw_dob
+from app.models import LastNameModel, FirstNameModel
+from app.utils import generate_nickname, is_leap, draw_dob, draw_identity
 
 
 class TestGenerateNickname(TestCase):
@@ -42,3 +43,23 @@ class TestDrawDob(TestCase):
         expected = "2020-02-28"
         self.assertEqual(expected, result)
         self.assertTrue(mock_randint.call_count == 3)
+
+
+class TestDrawIdentity(TestCase):
+
+    def setUp(self):
+        FirstNameModel.objects.create(first_name="Foo", gender="male")
+        LastNameModel.objects.create(last_name="Bar", gender="male")
+
+    @patch("app.utils.generate_nickname", return_value="foo.bar")
+    @patch("app.utils.draw_dob", return_value="2020-10-10")
+    def test_draw_identity(self, mock_dob, mock_nickname):
+        expected = {
+            "first_name": "Foo",
+            "last_name": "Bar",
+            "gender": "male",
+            "dob": "2020-10-10",
+            "nickname": "foo.bar"
+        }
+        result = draw_identity()
+        self.assertEqual(expected, result)
