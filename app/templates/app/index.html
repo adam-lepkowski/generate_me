@@ -43,10 +43,10 @@
 
     <div class="form-div">
       <div class="gender-icons">
-        <i class="fa-solid fa-mars {% if gender == 'male' %}icon-male{% endif %}"></i>
-        <i class="fa-solid fa-venus {% if gender == 'female' %}icon-female{% endif %}"></i>
+        <i class="fa-solid fa-mars"></i>
+        <i class="fa-solid fa-venus"></i>
       </div>
-      <form action="/" method="POST">
+      <form identity-url="{% url 'index' %}" id="identity-form">
         {% csrf_token %}
         {% for field in form %}
         <div class="form-row">
@@ -58,7 +58,7 @@
         </div>
         {% endfor %}
         <div class="generate-row">
-          <input class="btn generate-button" type="submit" value="Generate">
+          <input class="btn generate-button" type="button" value="Generate" onclick="fetchIdentity()">
         </div>
       </form>
     </div>
