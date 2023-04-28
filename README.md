@@ -12,4 +12,4 @@ If you got the data needed in a csv file you can use a method from app.utils -  
 Use populate_db for small datasets. Let’s say a few hundred rows. It’s slow and will take forever for thousands and more rows.
 
 ## Run server
-After populating the database you are ready to go. Just run the server, go to index page and click “Generate”. Form will be filled out with random first name, last name, date of birth (any date between 1970 and 2010 details in app.utils draw_dob) and nickname (details in app.utils generate_nickname). Copy form content by clicking clipboard icon placed by form input fields.
+After populating the database you are ready to go. Just run the server, go to index page and click “Generate”. Form will be filled out with random first name, last name, date of birth (any date between 1970 and 2010 details in app.utils draw_dob) and nickname (details in app.utils generate_nickname). Click the copy popup sign to copy input content. The popup will appear when you hover over clipboard icons.
