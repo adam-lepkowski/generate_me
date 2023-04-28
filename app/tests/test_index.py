@@ -24,21 +24,7 @@ class TestIndex(TestCase):
         response = self.client.get("/")
         self.assertEqual(response.resolver_match.func.view_class, IndexView)
 
-    @patch("app.views.draw_identity", return_value=IDENTITY)
-    def test_index_post(self, indentity_mock):
+    def test_index_post_disallowed(self):
         response = self.client.post("/")
-        self.assertEqual(200, response.status_code)
+        self.assertEqual(405, response.status_code)
 
-    @patch("app.views.GeneratorForm")
-    @patch("app.views.draw_identity", return_value=IDENTITY)
-    def test_index_post_context(self, indentity_mock, gen_form_mock):
-        response = self.client.post("/")
-        result = {
-            "form": response.context["form"],
-            "gender": response.context["gender"],
-        }
-        expected = {
-            "form": gen_form_mock(),
-            "gender": IDENTITY["gender"]
-        }
-        self.assertEqual(expected, result)
