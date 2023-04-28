@@ -25,14 +25,3 @@ class IndexView(View):
         }
         return render(request, "app/index.html", context)
 
-    def post(self, request):
-        """
-        Render main page with randomly selected data in form.
-        """
-
-        identity = draw_identity()
-        context = {
-            "form": GeneratorForm(initial=identity, label_suffix=""),
-            "gender": identity.get("gender")
-        }
-        return render(request, "app/index.html", context)
