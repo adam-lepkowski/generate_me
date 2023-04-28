@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from django.views import View
 
 from .forms import GeneratorForm
@@ -14,6 +15,10 @@ class IndexView(View):
         """
         Render main page with an empty form.
         """
+
+        if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+            identity = draw_identity()
+            return JsonResponse(identity)
 
         context = {
             "form": GeneratorForm(label_suffix="")
